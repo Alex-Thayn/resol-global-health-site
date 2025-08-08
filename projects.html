@@ -11,32 +11,21 @@
   <link rel="stylesheet" href="/style.css" />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    /* Page-specific image fills */
-    .photo.education {
-      background:
-        linear-gradient(0deg, rgba(51,51,75,.04), rgba(51,51,75,.04)),
-        url("/images/programs-education.jpg") center/cover no-repeat;
-      background-position: 50% 45%;
-    }
-    .photo.water {
-      background:
-        linear-gradient(0deg, rgba(51,51,75,.04), rgba(51,51,75,.04)),
-        url("/images/programs-water.jpg") center/cover no-repeat;
-      background-position: 50% 55%;
-    }
-    .photo.jornadas {
-      background:
-        linear-gradient(0deg, rgba(51,51,75,.04), rgba(51,51,75,.04)),
-        url("/images/spotlight-chicacao.jpg") center/cover no-repeat;
-      background-position: 45% 50%;
-    }
-    .photo.midwives {
-      background:
-        linear-gradient(0deg, rgba(51,51,75,.04), rgba(51,51,75,.04)),
-        url("/images/partners-team.jpg") center/cover no-repeat;
-      background-position: 50% 45%;
-    }
+    /* page-specific polish */
     .program-wrap { gap: var(--space-7); }
+    @media (min-width: 960px) { .program-wrap { gap: var(--space-8); } }
+    .two-col[id] { scroll-margin-top: 96px; } /* anchors not hidden under sticky header */
+
+    /* compact hero chips */
+    .hero .cta-row a.btn.btn-secondary {
+      --btn-h: 34px; --btn-px: 12px;
+      border-width: 1.5px; font-weight: 600; opacity: .95;
+    }
+    .hero .cta-row a.btn.btn-secondary:hover { opacity: 1; }
+
+    /* real <img> for accessibility */
+    .spotlight-card { aspect-ratio: 16/10; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .spot-img { width: 100%; height: 100%; object-fit: cover; display: block; }
   </style>
 </head>
 <body>
@@ -62,7 +51,7 @@
     <section class="hero">
       <div class="container hero-inner">
         <h1>Projects</h1>
-        <p>Practical, community‑led work that reduces illness, grows local capacity, and improves access to care.</p>
+        <p>Practical, community-led work that reduces illness, grows local capacity, and improves access to care.</p>
         <div class="cta-row">
           <a href="#education" class="btn btn-secondary">Community education</a>
           <a href="#water" class="btn btn-secondary">Clean water</a>
@@ -73,17 +62,18 @@
       <div class="sun" aria-hidden="true"></div>
     </section>
 
-    <!-- Current Projects -->
+    <!-- Current projects -->
     <section class="section alt">
       <div class="container program-wrap">
         <!-- Education -->
         <div id="education" class="two-col">
           <div>
             <h2>Community health education</h2>
-            <p>Six‑month courses led by local educators and visiting health professionals. Topics include hygiene and sanitation, nutrition and cooking, wound care, first aid, and women’s health.</p>
+            <p>Six-month courses led by local educators and visiting health professionals. Topics include hygiene and sanitation, nutrition and cooking, wound care, first aid, and women’s health.</p>
           </div>
-          <div class="spotlight-card" aria-hidden="true">
-            <div class="spotlight-photo photo education"></div>
+          <div class="spotlight-card">
+            <img class="spot-img" src="/images/programs-education.jpg"
+              alt="Women’s health education session with community members in Chicacao, Guatemala.">
           </div>
         </div>
 
@@ -91,10 +81,11 @@
         <div id="water" class="two-col">
           <div>
             <h2>Clean water access</h2>
-            <p>In partnership with Ecofiltros, we provide affordable ceramic water filters and hands‑on training in setup, maintenance, and safe storage so families can drink safely every day.</p>
+            <p>In partnership with Ecofiltros, we provide affordable ceramic water filters and hands-on training in setup, maintenance, and safe storage so families can drink safely every day.</p>
           </div>
-          <div class="spotlight-card" aria-hidden="true">
-            <div class="spotlight-photo photo water"></div>
+          <div class="spotlight-card">
+            <img class="spot-img" src="/images/programs-water.jpg"
+              alt="Family receives a ceramic Ecofiltro water filter and bucket for clean drinking water, Chicacao, Guatemala.">
           </div>
         </div>
 
@@ -104,8 +95,9 @@
             <h2>Medical jornadas</h2>
             <p>Mobile clinics bring primary care to several communities in the Chicacao region, staffed by Guatemalan providers with support from clinicians in the United States. We focus on patient education, prevention, and rapid connection to local services.</p>
           </div>
-          <div class="spotlight-card" aria-hidden="true">
-            <div class="spotlight-photo photo jornadas"></div>
+          <div class="spotlight-card">
+            <img class="spot-img" src="/images/spotlight-chicacao.jpg"
+              alt="Nurse speaking with an elder during a mobile clinic in Chicacao, Guatemala.">
           </div>
         </div>
 
@@ -115,8 +107,9 @@
             <h2>Midwife training</h2>
             <p>With local ministries of health we strengthen midwifery skills using Laerdal’s <em>Helping Babies Survive</em> curriculum to improve outcomes for mothers and newborns.</p>
           </div>
-          <div class="spotlight-card" aria-hidden="true">
-            <div class="spotlight-photo photo midwives"></div>
+          <div class="spotlight-card">
+            <img class="spot-img" src="/images/partners-team.jpg"
+              alt="Local and visiting healthcare team group portrait in a clinic, Chicacao, Guatemala.">
           </div>
         </div>
       </div>
