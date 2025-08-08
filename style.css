@@ -57,6 +57,24 @@ img{max-width:100%; height:auto}
   background:var(--surface-72); backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
 }
+.site-header .btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 800;           /* heavier text */
+  letter-spacing: .02em;      /* tiny tracking helps */
+  /* a subtle white halo so the navy pill pops from the header bg */
+  box-shadow: 0 0 0 2px rgba(255,255,255,.75), var(--shadow);
+}
+.site-header .btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+.site-header .btn-primary:focus {
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.9),
+    0 0 0 6px rgba(51,51,75,.35);
+}
+
 .header-inner{display:flex; align-items:center; justify-content:space-between; padding:var(--space-2) 0}
 .brand{font-family:Inter,system-ui,sans-serif; font-weight:700; letter-spacing:.08em; text-decoration:none; color:var(--text)}
 .nav ul{display:flex; gap:var(--space-3); align-items:center; margin:0; padding:0; list-style:none}
