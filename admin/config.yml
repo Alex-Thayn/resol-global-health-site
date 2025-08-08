@@ -2,8 +2,6 @@ backend:
   name: github
   repo: Alex-Thayn/resol-global-health-site
   branch: main
-  base_url: /.netlify/functions
-  auth_endpoint: auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
