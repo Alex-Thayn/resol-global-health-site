@@ -57,30 +57,23 @@ img{max-width:100%; height:auto}
   background:var(--surface-72); backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
 }
-.site-header .btn-primary {
-  background: var(--primary);
-  color: var(--on-primary);
-  font-weight: 800;           /* heavier text */
-  letter-spacing: .02em;      /* tiny tracking helps */
-  /* a subtle white halo so the navy pill pops from the header bg */
-  box-shadow: 0 0 0 2px rgba(255,255,255,.75), var(--shadow);
-}
-.site-header .btn-primary:hover {
-  filter: brightness(1.06);
-}
-
-.site-header .btn-primary:focus {
-  box-shadow:
-    0 0 0 3px rgba(255,255,255,.9),
-    0 0 0 6px rgba(51,51,75,.35);
-}
-
 .header-inner{display:flex; align-items:center; justify-content:space-between; padding:var(--space-2) 0}
 .brand{font-family:Inter,system-ui,sans-serif; font-weight:700; letter-spacing:.08em; text-decoration:none; color:var(--text)}
 .nav ul{display:flex; gap:var(--space-3); align-items:center; margin:0; padding:0; list-style:none}
 .nav a{text-decoration:none; color:var(--text); padding:var(--space-2) var(--space-3); border-radius:8px}
 .nav a:hover{background:var(--muted)}
 .nav-toggle{display:none; font-size:20px; background:transparent; border:none; cursor:pointer}
+
+/* Header Donate legibility */
+.site-header .btn-primary{
+  background:var(--primary); color:var(--on-primary);
+  font-weight:800; letter-spacing:.02em;
+  box-shadow:0 0 0 2px rgba(255,255,255,.75), var(--shadow);
+}
+.site-header .btn-primary:hover{filter:brightness(1.06)}
+.site-header .btn-primary:focus{
+  box-shadow:0 0 0 3px rgba(255,255,255,.9), 0 0 0 6px rgba(51,51,75,.35);
+}
 
 /* ============== 4) BUTTONS ============== */
 .btn{
@@ -93,6 +86,10 @@ img{max-width:100%; height:auto}
 .btn-secondary{background:transparent; border:2px solid var(--primary); color:var(--primary)}
 .btn-secondary:hover{background:var(--primary); color:var(--on-primary)}
 .btn-ghost{border:1px solid var(--muted); color:var(--text); background:transparent}
+
+/* compact hero chips */
+.hero .cta-row .btn.btn-secondary{ --btn-h:34px; --btn-px:12px; border-width:1.5px; font-weight:600; opacity:.95 }
+.hero .cta-row .btn.btn-secondary:hover{opacity:1}
 
 /* ============== 5) HERO ============== */
 .hero{position:relative; isolation:isolate}
@@ -139,19 +136,22 @@ img{max-width:100%; height:auto}
 
 /* Two-column */
 .two-col{display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-5); align-items:center}
+.two-col[id]{scroll-margin-top:96px} /* anchors not hidden by sticky header */
 .fact-list{margin:10px 0 16px; padding-left:18px}
 
-/* Spotlight */
-.spotlight-card{background:var(--blue-100); border-radius:var(--radius); height:320px; box-shadow:var(--shadow); overflow:hidden}
-.spotlight-photo{width:100%; height:100%; background:linear-gradient(135deg, var(--blue-200), var(--blue-50))}
-.spotlight-photo{
-  background:
-    radial-gradient(600px 400px at 80% 20%, var(--accent-08), transparent 60%),
-    linear-gradient(0deg, rgba(51,51,75,.06), rgba(51,51,75,.06)),
-    url("/images/spotlight-chicacao.jpg") center/cover no-repeat;
-  /* nudge so faces aren’t clipped on narrow screens */
-  background-position: 45% 50%;
+/* Spotlight cards (shared) */
+.spotlight-card{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  background:var(--blue-100); /* safe fallback */
 }
+/* Option A: background div (used on About) */
+.spotlight-photo{position:absolute; inset:0; background-size:cover; background-position:center}
+/* Option B: real <img> (used on Projects) */
+.spot-img{width:100%; height:100%; object-fit:cover; display:block}
 
 /* CTA panel (dark) */
 .cta-panel{
@@ -187,31 +187,36 @@ img{max-width:100%; height:auto}
   .header-inner{position:relative}
 }
 
-/* 1) Make the jump links look like compact chips */
-.hero .cta-row a.btn.btn-secondary {
-  --btn-h: 34px;
-  --btn-px: 12px;
-  border-width: 1.5px;
-  font-weight: 600;
-  opacity: 0.95;
+/* ============== 9) PAGE-SPECIFIC ============== */
+/* Projects */
+.page-projects .program-wrap{display:grid; gap:var(--space-7)}
+@media (min-width:960px){ .page-projects .program-wrap{gap:var(--space-8)} }
+.page-projects .two-col{gap:var(--space-6)}
+
+/* About (moves inlined styles out of the page) */
+.page-about .spotlight-photo.about{
+  background:
+    radial-gradient(600px 400px at 80% 20%, var(--accent-08), transparent 60%),
+    linear-gradient(0deg, rgba(51,51,75,.06), rgba(51,51,75,.06)),
+    url("/images/about-spotlight.jpg") center/cover no-repeat;
+  background-position:40% 50%;
 }
-.hero .cta-row a.btn.btn-secondary:hover { opacity: 1; }
-
-/* 2) Prevent sticky header from covering anchor targets */
-.two-col[id] { scroll-margin-top: 96px; }
-
-/* 3) Consistent, responsive image sizing (no random heights) */
-.spotlight-card { 
-  position: relative;
-  aspect-ratio: 16 / 10;    /* keeps a steady shape */
-  height: auto;             /* let aspect-ratio drive height */
-}
-.spotlight-photo { position: absolute; inset: 0; }
-
-/* 4) More breathing room between project blocks on desktop */
-@media (min-width: 960px) {
-  .program-wrap { gap: var(--space-8); }
+.page-about .spotlight-photo.partners{
+  background:
+    linear-gradient(0deg, rgba(51,51,75,.04), rgba(51,51,75,.04)),
+    url("/images/partners-team.jpg") center/cover no-repeat;
+  background-position:50% 45%;
 }
 
-/* 5) Slightly larger section headings for scannability */
-.section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); }
+/* Donate */
+.page-donate .donate-hero .sun{display:none}
+.page-donate .donate-tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-3)}
+.page-donate .donate-tiles .card h3{margin:6px 0}
+.page-donate .donate-tiles .card p{color:var(--text-2)}
+@media(max-width:900px){ .page-donate .donate-tiles{grid-template-columns:1fr} }
+
+/* Contact */
+.page-contact .contact-hero .sun{display:none}
+.page-contact form.card input,
+.page-contact form.card textarea,
+.page-contact form.card select{width:100%}
