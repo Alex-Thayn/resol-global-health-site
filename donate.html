@@ -10,17 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
   <link rel="icon" href="/favicon.ico" />
-  <style>
-    .donate-hero .sun{display:none}
-    .donate-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
-    .donate-tiles .card h3{margin:6px 0}
-    .donate-tiles .card p{color:var(--text-2)}
-    @media(max-width:900px){.donate-tiles{grid-template-columns:1fr}}
-  </style>
 </head>
-<body>
+<body class="page-donate">
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">RESOL</a>
@@ -29,7 +21,7 @@
         <ul>
           <li><a href="/about.html">About</a></li>
           <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/donate.html" class="btn btn-primary">Donate</a></li>
+          <li><a href="/donate.html" class="btn btn-primary" aria-current="page">Donate</a></li>
           <li><a href="/contact.html" class="btn btn-ghost">Contact</a></li>
         </ul>
       </nav>
@@ -37,20 +29,18 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero donate-hero">
       <div class="container hero-inner">
-        <h1>Donate</h1>
-        <p>Your gift powers education, clean water, mobile clinics, and training for local providers. Thank you for helping communities shine.</p>
+        <h1 id="donate-hero-title">Donate</h1>
+        <p id="donate-hero-intro">Your gift powers education, clean water, mobile clinics, and training for local providers. Thank you for helping communities shine.</p>
         <div class="cta-row">
-          <a href="#give-online" class="btn btn-primary">Give online</a>
-          <a href="#monthly" class="btn btn-secondary">Give monthly</a>
+          <a href="#give-online" class="btn btn-primary" data-donate-url>Give online</a>
+          <a href="#monthly" class="btn btn-secondary" data-monthly-url>Give monthly</a>
           <a href="#other-ways" class="btn btn-secondary">Other ways to give</a>
         </div>
       </div>
     </section>
 
-    <!-- Impact tiles -->
     <section class="section alt">
       <div class="container">
         <div class="section-head">
@@ -63,12 +53,11 @@
           <article class="card"><h3>$250</h3><p>Midwife training materials for a cohort.</p></article>
           <article class="card"><h3>$500</h3><p>Support a one‑day mobile clinic in a rural community.</p></article>
           <article class="card"><h3>$1000</h3><p>Fuel, meds, and staffing for multiple jornadas.</p></article>
-          <article class="card"><h3>Any amount</h3><p>Strengthens local care and keeps projects running.</p></article>
+          <article class="card"><h3>Any amount</h3><p>Strengthens local care and keeps programs running.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- Give online / Monthly -->
     <section id="give-online" class="section">
       <div class="container two-col">
         <div>
@@ -76,16 +65,12 @@
           <p>Use our secure online form to make a one‑time or monthly donation. You’ll receive an email receipt immediately.</p>
           <p class="small">Note: 501(c)(3) status is pending. We’ll provide a receipt for your records and share our determination letter once approved.</p>
           <div class="cta-row">
-            <!-- Replace href with your donation platform URL (e.g., Donorbox/PayPal/Stripe link) -->
-            <a class="btn btn-primary" href="#" aria-label="Open secure donation form">Donate online</a>
-            <a class="btn btn-secondary" href="#monthly">Make it monthly</a>
+            <a class="btn btn-primary" data-donate-url aria-label="Open secure donation form">Donate online</a>
+            <a class="btn btn-secondary" data-monthly-url>Make it monthly</a>
           </div>
         </div>
         <div class="spotlight-card" aria-hidden="true">
-          <div class="spotlight-photo" style="background:
-            linear-gradient(0deg, rgba(51,51,75,.05), rgba(51,51,75,.05)),
-            url('/images/programs-water.jpg') center/cover no-repeat;
-            background-position: 50% 55%;"></div>
+          <img class="spot-img" src="/images/programs-water.jpg" alt="Family receives a ceramic Ecofiltro water filter and bucket for clean drinking water, Chicacao, Guatemala.">
         </div>
       </div>
     </section>
@@ -94,24 +79,20 @@
       <div class="container two-col">
         <div>
           <h2>Give monthly</h2>
-          <p>Monthly gifts help us plan ahead and keep projects steady throughout the year. You can change or cancel anytime.</p>
+          <p>Monthly gifts help us plan ahead and keep programs steady throughout the year. You can change or cancel anytime.</p>
           <ul class="fact-list">
             <li>Consistent support for classes, clinics, and training</li>
             <li>Lower admin costs than one‑time only campaigns</li>
             <li>Easy to manage — you’re in control</li>
           </ul>
-          <a class="btn btn-secondary" href="#" aria-label="Open monthly donation form">Start a monthly gift</a>
+          <a class="btn btn-secondary" data-monthly-url aria-label="Open monthly donation form">Start a monthly gift</a>
         </div>
         <div class="spotlight-card" aria-hidden="true">
-          <div class="spotlight-photo" style="background:
-            linear-gradient(0deg, rgba(51,51,75,.05), rgba(51,51,75,.05)),
-            url('/images/spotlight-chicacao.jpg') center/cover no-repeat;
-            background-position: 45% 50%;"></div>
+          <img class="spot-img" src="/images/spotlight-chicacao.jpg" alt="Nurse speaking with an elder during a mobile clinic in Chicacao, Guatemala.">
         </div>
       </div>
     </section>
 
-    <!-- Other ways to give -->
     <section id="other-ways" class="section">
       <div class="container">
         <div class="section-head">
@@ -119,40 +100,10 @@
           <p>Prefer a different method? We’re happy to help.</p>
         </div>
         <div class="grid grid-3">
-          <article class="card">
-            <h3>Employer match</h3>
-            <p>Ask your HR team if they’ll match your gift. We’re happy to complete any forms required.</p>
-          </article>
-          <article class="card">
-            <h3>Check</h3>
-            <p>Make checks payable to <strong>Resol Global Health</strong>. <em>(Add mailing address here.)</em></p>
-          </article>
-          <article class="card">
-            <h3>In‑kind gifts</h3>
-            <p>We accept select supplies for clinics and education. <a class="text-link" href="/contact.html">Contact us</a> about current needs.</p>
-          </article>
+          <article class="card"><h3>Employer match</h3><p>Ask your HR team if they’ll match your gift. We’re happy to complete any forms required.</p></article>
+          <article class="card"><h3>Check</h3><p>Make checks payable to <strong>Resol Global Health</strong>. <em>(Add mailing address here.)</em></p></article>
+          <article class="card"><h3>In‑kind gifts</h3><p>We accept select supplies for clinics and education. <a class="text-link" href="/contact.html">Contact us</a> about current needs.</p></article>
         </div>
-      </div>
-    </section>
-
-    <!-- Pledge / questions form (Netlify) -->
-    <section class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Questions or pledges</h2>
-          <p>We’ll reply within 2–3 business days.</p>
-        </div>
-        <form name="donation-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="card" style="padding:var(--space-5)">
-          <input type="hidden" name="form-name" value="donation-contact">
-          <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
-          <div style="display:grid; gap:var(--space-3); grid-template-columns:1fr 1fr">
-            <p><label>Name<br><input required name="name" type="text" style="width:100%"></label></p>
-            <p><label>Email<br><input required name="email" type="email" style="width:100%"></label></p>
-          </div>
-          <p><label>Message<br><textarea required name="message" rows="5" style="width:100%"></textarea></label></p>
-          <div class="cta-row"><button class="btn btn-primary" type="submit">Send</button></div>
-        </form>
-        <p class="small" style="margin-top:var(--space-3)">We’ll email you a confirmation after submission.</p>
       </div>
     </section>
   </main>
@@ -171,7 +122,6 @@
   </footer>
 
   <script>
-    // Accessible mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
     toggle.addEventListener('click', () => {
@@ -179,6 +129,10 @@
       toggle.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('open');
     });
+  </script>
+  <script type="module">
+    import { hydrateDonate } from "/assets/content.js";
+    hydrateDonate();
   </script>
 </body>
 </html>

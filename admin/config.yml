@@ -1,19 +1,117 @@
-
 backend:
   name: github
-  repo: your-username/your-repo-name
+  repo: Alex-Thayn/resol-global-health-site
   branch: main
-
+  base_url: /.netlify/functions
+  auth_endpoint: auth
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
+publish_mode: editorial_workflow
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "content/site.json"
+        label: "Globals"
+        format: json
+        fields:
+          - {label: "Organization Name", name: org_name, widget: string}
+          - {label: "Email", name: email, widget: string}
+          - {label: "Mailing Address", name: address, widget: text, required: false}
+          - {label: "Donate Link", name: donate_url, widget: string}
+          - {label: "Social Links", name: social, widget: object, fields:
+              [{label: Facebook, name: facebook, widget: string, required: false},
+               {label: Instagram, name: instagram, widget: string, required: false},
+               {label: X/Twitter, name: twitter, widget: string, required: false}]}
+
+  - name: "home"
+    label: "Home"
+    files:
+      - file: "content/home.json"
+        label: "Homepage"
+        format: json
+        fields:
+          - {label: Hero Title, name: hero_title, widget: string}
+          - {label: Hero Intro, name: hero_intro, widget: text}
+          - {label: Primary CTA Label, name: cta_primary_label, widget: string}
+          - {label: Primary CTA Link, name: cta_primary_href, widget: string}
+          - {label: Secondary CTA Label, name: cta_secondary_label, widget: string}
+          - {label: Secondary CTA Link, name: cta_secondary_href, widget: string}
+
+  - name: "about"
+    label: "About"
+    files:
+      - file: "content/about.json"
+        label: "About Page"
+        format: json
+        fields:
+          - {label: Who We Are Intro, name: who_intro, widget: text}
+          - {label: Meaning of RESOL, name: meaning, widget: text}
+          - label: Values
+            name: values
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: text, widget: text}
+          - label: Where We Work (facts)
+            name: facts
+            widget: list
+            field: {label: Fact, name: fact, widget: string}
+          - {label: About Image, name: about_image, widget: image}
+          - {label: Partners/Team Image, name: partners_image, widget: image}
+
+  - name: "projects"
+    label: "Projects"
+    files:
+      - file: "content/projects.json"
+        label: "Projects Page"
+        format: json
+        fields:
+          - label: Current Projects
+            name: current
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Body (HTML allowed), name: body, widget: text}
+              - {label: Image, name: image, widget: image}
+              - {label: Alt Text, name: alt, widget: string}
+          - label: Future Projects
+            name: future
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: text, widget: text}
+
+  - name: "donate"
+    label: "Donate"
+    files:
+      - file: "content/donate.json"
+        label: "Donate Page"
+        format: json
+        fields:
+          - {label: Hero Title, name: hero_title, widget: string}
+          - {label: Hero Intro, name: hero_intro, widget: text}
+          - label: Tiles
+            name: tiles
+            widget: list
+            fields:
+              - {label: Amount/Title, name: title, widget: string}
+              - {label: Description, name: text, widget: text}
+          - {label: Donate Link, name: donate_url, widget: string}
+          - {label: Monthly Link, name: monthly_url, widget: string, required: false}
+          - {label: Image A, name: image_a, widget: image}
+          - {label: Image B, name: image_b, widget: image}
+
+  - name: "contact"
+    label: "Contact"
+    files:
+      - file: "content/contact.json"
+        label: "Contact Page"
+        format: json
+        fields:
+          - {label: Hero Title, name: hero_title, widget: string}
+          - {label: Hero Intro, name: hero_intro, widget: text}
+          - {label: Email, name: email, widget: string}
+          - {label: Mailing Address, name: address, widget: text, required: false}
+          - {label: Hero Image, name: hero_image, widget: image}

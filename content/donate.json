@@ -1,0 +1,34 @@
+{
+  "hero_title": "Donate",
+  "hero_intro": "Your gift powers education, clean water, mobile clinics, and training for local providers. Thank you for helping communities shine.",
+  "tiles": [
+    {
+      "title": "$25",
+      "text": "Health class supplies for one participant."
+    },
+    {
+      "title": "$75",
+      "text": "Subsidized Ecofiltro and training for a household."
+    },
+    {
+      "title": "$250",
+      "text": "Midwife training materials for a cohort."
+    },
+    {
+      "title": "$500",
+      "text": "Support a one\u2011day mobile clinic in a rural community."
+    },
+    {
+      "title": "$1000",
+      "text": "Fuel, meds, and staffing for multiple jornadas."
+    },
+    {
+      "title": "Any amount",
+      "text": "Strengthens local care and keeps programs running."
+    }
+  ],
+  "donate_url": "",
+  "monthly_url": "",
+  "image_a": "/images/programs-water.jpg",
+  "image_b": "/images/spotlight-chicacao.jpg"
+}
