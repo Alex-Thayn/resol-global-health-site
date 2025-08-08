@@ -1,7 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Alex-Thayn/resol-global-health-site
   branch: main
-
+  base_url: /.netlify/functions
+  auth_endpoint: auth
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 publish_mode: editorial_workflow
@@ -17,7 +19,7 @@ collections:
           - {label: "Organization Name", name: org_name, widget: string}
           - {label: "Email", name: email, widget: string}
           - {label: "Mailing Address", name: address, widget: text, required: false}
-          - {label: "Donate Link", name: donate_url, widget: string, required: false}
+          - {label: "Donate Link", name: donate_url, widget: string}
           - {label: "Social Links", name: social, widget: object, fields:
               [{label: Facebook, name: facebook, widget: string, required: false},
                {label: Instagram, name: instagram, widget: string, required: false},
@@ -56,8 +58,8 @@ collections:
             name: facts
             widget: list
             field: {label: Fact, name: fact, widget: string}
-          - {label: About Image, name: about_image, widget: image, required: false}
-          - {label: Partners/Team Image, name: partners_image, widget: image, required: false}
+          - {label: About Image, name: about_image, widget: image}
+          - {label: Partners/Team Image, name: partners_image, widget: image}
 
   - name: "projects"
     label: "Projects"
@@ -96,10 +98,10 @@ collections:
             fields:
               - {label: Amount/Title, name: title, widget: string}
               - {label: Description, name: text, widget: text}
-          - {label: Donate Link, name: donate_url, widget: string, required: false}
+          - {label: Donate Link, name: donate_url, widget: string}
           - {label: Monthly Link, name: monthly_url, widget: string, required: false}
-          - {label: Image A, name: image_a, widget: image, required: false}
-          - {label: Image B, name: image_b, widget: image, required: false}
+          - {label: Image A, name: image_a, widget: image}
+          - {label: Image B, name: image_b, widget: image}
 
   - name: "contact"
     label: "Contact"
@@ -112,4 +114,4 @@ collections:
           - {label: Hero Intro, name: hero_intro, widget: text}
           - {label: Email, name: email, widget: string}
           - {label: Mailing Address, name: address, widget: text, required: false}
-          - {label: Hero Image, name: hero_image, widget: image, required: false}
+          - {label: Hero Image, name: hero_image, widget: image}
