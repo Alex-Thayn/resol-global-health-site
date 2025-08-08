@@ -186,3 +186,32 @@ img{max-width:100%; height:auto}
   .nav ul{flex-direction:column; align-items:stretch}
   .header-inner{position:relative}
 }
+
+/* 1) Make the jump links look like compact chips */
+.hero .cta-row a.btn.btn-secondary {
+  --btn-h: 34px;
+  --btn-px: 12px;
+  border-width: 1.5px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.hero .cta-row a.btn.btn-secondary:hover { opacity: 1; }
+
+/* 2) Prevent sticky header from covering anchor targets */
+.two-col[id] { scroll-margin-top: 96px; }
+
+/* 3) Consistent, responsive image sizing (no random heights) */
+.spotlight-card { 
+  position: relative;
+  aspect-ratio: 16 / 10;    /* keeps a steady shape */
+  height: auto;             /* let aspect-ratio drive height */
+}
+.spotlight-photo { position: absolute; inset: 0; }
+
+/* 4) More breathing room between project blocks on desktop */
+@media (min-width: 960px) {
+  .program-wrap { gap: var(--space-8); }
+}
+
+/* 5) Slightly larger section headings for scannability */
+.section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); }
