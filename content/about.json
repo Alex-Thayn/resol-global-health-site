@@ -1,0 +1,26 @@
+{
+  "who_intro": "\u201cResol\u201d means reflected sunlight. We see ourselves as a reflection of many hands and hearts \u2014 local leaders, educators, clinicians, volunteers, donors, and neighbors near and far.",
+  "meaning": "Resol is a Spanish word for sunlight reflected from a surface. The sun\u2019s light is constant, generous, and shared by all. Those ideas shape our purpose.",
+  "values": [
+    {
+      "title": "Collective light",
+      "text": "Our work is a reflection of shared love, skill, and hope \u2014 never just one person or one organization."
+    },
+    {
+      "title": "Sustainability",
+      "text": "Like the steady sun, we build programs that last and grow with the community."
+    },
+    {
+      "title": "Equity",
+      "text": "Health is for everyone, regardless of race, ethnicity, gender, or religion."
+    }
+  ],
+  "facts": [
+    "Travel to clinics can range from an hour by foot to several hours by road.",
+    "Many community members attend ~3\u20134 years of school; many women attend 1\u20132 years.",
+    "Basic infrastructure like sewage systems and garbage disposal is limited in some areas.",
+    "Clean, potable water is not guaranteed for many households."
+  ],
+  "about_image": "/images/about-spotlight.jpg",
+  "partners_image": "/images/partners-team.jpg"
+}

@@ -1,0 +1,46 @@
+{
+  "current": [
+    {
+      "title": "Community health education",
+      "body": "Six-month courses led by local educators and visiting health professionals. Topics include hygiene and sanitation, nutrition and cooking, wound care, first aid, and women\u2019s health.",
+      "image": "/images/programs-education.jpg",
+      "alt": "Women\u2019s health education session with community members in Chicacao, Guatemala."
+    },
+    {
+      "title": "Clean water access",
+      "body": "In partnership with Ecofiltros, we provide affordable ceramic water filters and hands\u2011on training in setup, maintenance, and safe storage so families can drink safely every day.",
+      "image": "/images/programs-water.jpg",
+      "alt": "Family receives a ceramic Ecofiltro water filter and bucket for clean drinking water, Chicacao, Guatemala."
+    },
+    {
+      "title": "Medical jornadas",
+      "body": "Mobile clinics bring primary care to several communities in the Chicacao region, staffed by Guatemalan providers with support from clinicians in the United States. We focus on patient education, prevention, and rapid connection to local services.",
+      "image": "/images/spotlight-chicacao.jpg",
+      "alt": "Nurse speaking with an elder during a mobile clinic in Chicacao, Guatemala."
+    },
+    {
+      "title": "Midwife training",
+      "body": "With local ministries of health we strengthen midwifery skills using Laerdal\u2019s Helping Babies Survive curriculum to improve outcomes for mothers and newborns.",
+      "image": "/images/partners-team.jpg",
+      "alt": "Local and visiting healthcare team group portrait in a clinic, Chicacao, Guatemala."
+    }
+  ],
+  "future": [
+    {
+      "title": "Project one",
+      "text": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "title": "Project two",
+      "text": "Quisque mattis lorem at sodales gravida."
+    },
+    {
+      "title": "Project three",
+      "text": "Etiam gravida neque ac commodo."
+    },
+    {
+      "title": "Project four",
+      "text": "Phasellus iaculis eros vitae finibus."
+    }
+  ]
+}
