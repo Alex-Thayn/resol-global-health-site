@@ -1,13 +1,14 @@
 :root {
-  --bg: #F7F6F2;
-  --text: #1F2421;
-  --primary: #2F5E3D; /* deep forest green */
-  --accent: #D9A441;  /* soft gold */
-  --muted: #E6EEE7;
+  --bg: #FAFAF8;           /* warm off‑white */
+  --text: #2A2E35;         /* neutral dark for body text */
+  --primary: #33334B;      /* brand navy from wordmark */
+  --accent: #E1BB53;       /* sun gold from icon */
+  --muted: #EEF0F4;        /* soft cool gray for hovers */
   --surface: #FFFFFF;
-  --shadow: 0 10px 30px rgba(8, 24, 17, 0.08);
+  --shadow: 0 10px 30px rgba(14, 18, 26, 0.08);
   --radius: 14px;
 }
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -31,19 +32,19 @@ body {
 .btn { display: inline-block; padding: 12px 18px; border-radius: 999px; font-weight: 600; text-decoration: none; }
 .btn-primary { background: var(--primary); color: white; box-shadow: var(--shadow); }
 .btn-primary:hover { filter: brightness(1.05); }
-.btn-secondary { background: #203b28; color: #fff; opacity: 0.9; }
-.btn-secondary:hover { opacity: 1; }
+.btn-secondary { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
+.btn-secondary:hover { background: var(--primary); color: #fff; }
 .btn-ghost { border: 1px solid #cbd5ce; color: var(--text); }
 
 /* Hero */
 .hero { position: relative; isolation: isolate; }
 .hero:before {
   content: ""; position: absolute; inset: 0; z-index: -2;
-  background: radial-gradient(90% 70% at 15% 10%, rgba(217,164,65,0.25) 0%, rgba(217,164,65,0.08) 30%, transparent 60%),
+  background: radial-gradient(90% 70% at 15% 10%, rgba(225,187,83,0.25) 0%, rgba(225,187,83,0.08) 30%, transparent 60%),
               linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
 }
 .sun { position: absolute; width: 520px; height: 520px; right: -160px; top: -120px; z-index: -1;
-  background: radial-gradient(circle, rgba(217,164,65,0.35), rgba(217,164,65,0.05) 60%, transparent 70%);
+  background: radial-gradient(circle, rgba(225,187,83,0.35), rgba(225,187,83,0.05) 60%, transparent 70%);
   filter: blur(2px);
 }
 .hero-inner { padding: 72px 0 56px; }
@@ -78,7 +79,7 @@ body {
 .spotlight-photo { width: 100%; height: 100%; background: linear-gradient(135deg, #b8d4c6, #e9efe5); }
 
 /* CTA panel */
-.cta-panel { background: linear-gradient(180deg, #16331f, #214b2b); color: #fff; border-radius: 18px; padding: 28px; box-shadow: var(--shadow); }
+.cta-panel { background: linear-gradient(180deg, #33334B, #252537); color: #fff; border-radius: 18px; padding: 28px; box-shadow: var(--shadow); }
 .cta-panel h2 { margin-top: 0; }
 
 /* Footer */
