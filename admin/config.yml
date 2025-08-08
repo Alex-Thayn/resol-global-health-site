@@ -1,91 +1,19 @@
+
 backend:
-  name: git-gateway
+  name: github
+  repo: your-username/your-repo-name
   branch: main
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "content/home.md"
-        label: "Home"
-        name: "home"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Hero Headline, name: hero_title, widget: string }
-          - { label: Hero Subhead, name: hero_sub, widget: text }
-          - { label: Primary CTA Label, name: cta_primary_label, widget: string }
-          - { label: Primary CTA Link, name: cta_primary_link, widget: string }
-          - { label: Secondary CTA Label, name: cta_secondary_label, widget: string, required: false }
-          - { label: Secondary CTA Link, name: cta_secondary_link, widget: string, required: false }
-          - label: Pillars
-            name: pillars
-            widget: list
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Body, name: body, widget: text }
-          - label: Program Cards
-            name: program_cards
-            widget: list
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Excerpt, name: excerpt, widget: text }
-              - { label: Link, name: link, widget: string }
-      - file: "content/about.md"
-        label: "About"
-        name: "about"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Who We Are, name: who, widget: markdown }
-          - { label: Values, name: values, widget: list, fields: [
-              {label: Name, name: name, widget: string},
-              {label: Body, name: body, widget: text}
-            ] }
-      - file: "content/where.md"
-        label: "Where We Work"
-        name: "where"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Region Intro, name: intro, widget: markdown }
-          - { label: Facts, name: facts, widget: list, fields: [
-              {label: Fact, name: fact, widget: text}
-            ] }
-      - file: "content/programs.md"
-        label: "Programs"
-        name: "programs"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - label: Current Programs
-            name: current
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Description, name: description, widget: markdown }
-          - label: Future Projects
-            name: future
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Description, name: description, widget: text }
-      - file: "content/get-involved.md"
-        label: "Get Involved"
-        name: "get_involved"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Donate Copy, name: donate, widget: markdown }
-          - { label: Partner Copy, name: partner, widget: markdown }
-          - { label: Volunteer Copy, name: volunteer, widget: markdown }
-          - { label: Newsletter Copy, name: newsletter, widget: text }
-
-  - name: "updates"
-    label: "Updates"
-    folder: "content/updates"
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: datetime }
-      - { label: Body, name: body, widget: markdown }
-      - { label: Cover Image, name: cover, widget: image, required: false }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
