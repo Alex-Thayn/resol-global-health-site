@@ -1,57 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Resol Global Health</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta name="description" content="Resol Global Health partners with local leaders to lower barriers to care and strengthen community health systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-  <header>
-    <h1>Resol Global Health</h1>
-    <p>Shine Through the Darkness of Poverty</p>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/projects.html">Projects</a>
-      <a href="/blog/">Blog</a>
-      <a href="/donate.html">Donate</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">RESOL</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/projects.html">Programs</a></li>
+          <li><a href="/donate.html" class="btn btn-primary">Donate</a></li>
+          <li><a href="/contact.html" class="btn btn-ghost">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Our Mission</h2>
-      <p>Resol Global Health is a non-profit organization (501(c)3 status pending) with a three-fold mission to decrease health disparities and promote health and wellness in low-resource communities.</p>
-      <ul>
-        <li>Reduce underlying causes of illness</li>
-        <li>Increase capacity of healthcare workers</li>
-        <li>Improve access to healthcare</li>
-      </ul>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Health, illuminated</h1>
+        <p>Resol Global Health partners with local leaders to lower barriers to care and strengthen community health systems.</p>
+        <div class="cta-row">
+          <a href="/donate.html" class="btn btn-primary">Donate</a>
+          <a href="/about.html" class="btn btn-secondary">Learn more</a>
+        </div>
+      </div>
+      <div class="sun"></div>
     </section>
 
-    <section>
-      <h2>Featured Projects</h2>
-      <ul>
-        <li>Community-based health education for women</li>
-        <li>Water filtration access with Ecofiltros</li>
-        <li>Mobile medical clinics (jornadas)</li>
-        <li>Midwife training programs</li>
-      </ul>
+    <!-- Pillars -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our mission</h2>
+          <p>Three focus areas guide our work with communities.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌱</div>
+            <h3>Reduce causes of illness</h3>
+            <p>We collaborate with communities to identify needs, provide practical health education, and support everyday prevention.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <h3>Grow local capacity</h3>
+            <p>We train healthcare workers with current, evidence based practices to improve outcomes and save lives.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🏥</div>
+            <h3>Improve access to care</h3>
+            <p>We host mobile clinics, partner with local systems, and support sustainable care close to home.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Latest Blog Posts</h2>
-      <div id="blog-list">
-        <p>Coming soon!</p>
+    <!-- Spotlight: Where we work -->
+    <section class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>Chicacao, Guatemala</h2>
+          <p>Our current focus is the Chicacao region in southern Guatemala. We work alongside Spanish and Mayan language speakers, centering local leadership and knowledge.</p>
+          <ul class="fact-list">
+            <li>Travel to clinics ranges from an hour by foot to several hours by road.</li>
+            <li>Schooling averages 3 to 4 years, with many women attending 1 to 2 years.</li>
+            <li>Many communities lack sewage systems, garbage disposal, and clean water.</li>
+            <li>Many workers earn about 2,000 quetzales per month, about 260 USD.</li>
+          </ul>
+          <a class="text-link" href="/about.html">More about where we work →</a>
+        </div>
+        <div class="spotlight-card" aria-hidden="true">
+          <div class="spotlight-photo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Programs</h2>
+          <p>Practical, community led work you can support today.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card program">
+            <h3>Community health education</h3>
+            <p>Six month courses on hygiene, nutrition, first aid, and women’s health, led by local educators with visiting clinicians.</p>
+            <a class="text-link" href="/projects.html#education">Learn more →</a>
+          </article>
+          <article class="card program">
+            <h3>Clean water access</h3>
+            <p>Ecofiltros for safe water at home, plus hands on training for setup and care.</p>
+            <a class="text-link" href="/projects.html#water">Learn more →</a>
+          </article>
+          <article class="card program">
+            <h3>Medical jornadas</h3>
+            <p>Mobile clinics in the Chicacao region, staffed by Guatemalan providers with support from the United States.</p>
+            <a class="text-link" href="/projects.html#jornadas">Learn more →</a>
+          </article>
+          <article class="card program">
+            <h3>Midwife training</h3>
+            <p>Skills strengthening with local ministries of health using Laerdal’s Helping Babies Survive curriculum.</p>
+            <a class="text-link" href="/projects.html#midwives">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get involved -->
+    <section class="section alt">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Shine a path to health</h2>
+          <p>Your support powers education, clean water, mobile clinics, and training for local providers.</p>
+          <div class="cta-row">
+            <a href="/donate.html" class="btn btn-primary">Donate</a>
+            <a href="/contact.html" class="btn btn-secondary">Partner or volunteer</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Resol Global Health. All rights reserved.</p>
-    <p><a href="/admin/">Editor Login</a></p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>RESOL Global Health</strong> · Health for all</p>
+      <nav aria-label="Footer">
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Programs</a>
+        <a href="/donate.html">Donate</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="small">Resol Global Health is a nonprofit organization. 501(c)(3) status pending.</p>
+    </div>
   </footer>
+
+  <script>
+    // Accessible mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
